@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Boletim do aluno:</h1>
+
+        <div>nota: <input id="nota"></div>
+
+        <button onclick="adicionarNota()">adicionar nota</button>
+
+        <p id="notaAluno">notas...</p>
+
+        <button onclick="calcularMedia()">calcular media</button>
+
+        <p id="resultado">resultado</p>
+
+    </div>
+</body>
+
+<script>
+    // array (lista) de notas.
+    let notas = []
+
+    // crie uma função que add uma nota, em um array de notas.
+    function adicionarNota(){
+        // pega a nota do imput com id nota, e guarda na variável notaTexto.
+        const notaTexto = document.querySelector("#nota").value.trim();
+        // converte notaTexto que é uma string em número e guarda em nota.
+        let nota = parseFloat(notaTexto)
+        // adiociona uma nota no array de notas.
+        notas.push(nota)
+
+        document.querySelector("#notaAluno").innerHTML = notas
+    }
+
+    function calcularMedia(){
+        let soma = 0
+
+        for(nota of notas){
+            soma = soma+nota
+        }
+
+        let media = soma/notas.length
+
+        document.querySelector("#resultado").innerHTML = media
+    }
+</script>
+</html>

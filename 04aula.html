@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Ingredientes para o bolo:</h1>
+
+        <div>Ovo: <input id="ovo"></div>
+        <div>Farinha: <input id="farinha"></div>
+        <div>Leite: <input id="leite"></div>
+        <div>Manteiga: <input id="manteiga"></div>
+        <div>Margarina: <input id="margarina"></div>
+
+        <button onclick="Conferir()">Conferir Ingrediente</button>
+    </div>
+</body>
+
+<script>
+    function Conferir(){
+        const ovo = document.querySelector("#ovo").value.trim() === 'sim';
+        const farinha = document.querySelector("#farinha").value.trim() === 'sim';
+        const leite = document.querySelector("#leite").value.trim() === 'sim';
+        const manteiga = document.querySelector("#manteiga").value.trim() === 'sim';
+        const margarina = document.querySelector("#margarina").value.trim() === 'sim';
+
+        console.log ({
+            ovo,farinha,leite,manteiga,margarina
+        })
+
+        if (ovo && farinha && leite && (manteiga || margarina)){
+            console.log ('Possue todos os ingredientes')
+        }
+        else{
+            console.log('Falta ingredientes')
+        }
+    }
+</script>
+</html>

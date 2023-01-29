@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Pedir para o usuario digitar duas notas 
+    let nota1 =  parseInt(prompt('Digite sua nota'));
+    let nota2 = parseInt(prompt('Digite sua segunda nota'));
+
+    let soma = nota1 + nota2;
+
+    let media = soma / 2;
+
+    //A nota de corte é 5,  mostrar uma mensagem informando se foi aprovado ou não.
+
+    if(media>=5 && nota1>0 && nota2>0){
+        alert('Você foi aprovado!!!!')
+    }
+    else{
+        alert ('Não foi aprovado.')
+    }
+
+</script>
+</html>
