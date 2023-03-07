@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lógica de Programação com Javascript</title>
+</head>
+
+<body>
+  <h1>Lógica de Programação com Javascript</h1>
+
+  <label>
+    Coloque um número:
+  </label>
+
+  <input id="numero" />
+
+  <button onclick="calcularClick()">Calcular tabuada</button>
+  
+  <br/>
+
+  <code id="tabuada"></code>
+</body>
+
+<script>
+  function calcularClick() {
+    // Pega o valor do input que tem o id "numero", mas ele vem como string.
+    const texto = document.querySelector("#numero").value
+
+    // Converte o valor que está como string para número e guarda na variável numero.
+    const numero = parseInt(texto)
+
+    console.log(numero)
+
+    const resultadoTabuada = calcularTabuada(numero)
+
+    document.querySelector("#tabuada").innerHTML = resultadoTabuada
+  }
+
+  function calcularTabuada(numero) {
+    // Inicia a variável resultado com uma string vazia
+    let resultado = ""
+
+    for (let i = 0; i <= 20; i++) {
+      // resultado = resultado + i + ', ';
+      let resultadoMutiplicacao = i * numero
+      // resultado = resultado + resultadoMutiplicacao + ', ';
+
+      resultado = `${resultado} <br/> ${numero} x ${i} = ${resultadoMutiplicacao}`
+    } 
+
+    return resultado
+  }
+  
+</script>
+
+</html>
